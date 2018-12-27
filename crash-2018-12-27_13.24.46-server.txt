@@ -1,0 +1,227 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  Inventory Tweaks Coremod (InventoryTweaks-1.63.jar)
+  LoadingPlugin (Quark-r1.5-135.jar)
+  CTMCorePlugin (CTM-MC1.12.2-0.3.2.18.jar)
+  CedUnleashedControlPlugin (CedUnleashedControl-1.12.2-1.1.10.jar)
+  Do not report to Forge! (If you haven't disabled the FoamFix coremod, try disabling it in the config! Note that this bit of text will still appear.) (foamfix-0.10.3-1.12.2.jar)
+  LoadingPlugin (ResourceLoader-MC1.12.1-1.5.3.jar)
+  AppleCore (AppleCore-mc1.12.2-3.1.4.jar)
+  CedChallengeCore (CedChallengeMode-1.12.2-0.8.1.jar)
+  ForgelinPlugin (Forgelin-1.8.2.jar)
+  OpenModsCorePlugin (OpenModsLib-1.12.2-0.12.1.jar)
+Contact their authors BEFORE contacting forge
+
+// You should try our sister game, Minceraft!
+
+Time: 12/27/18 1:24 PM
+Description: Exception in server tick loop
+
+java.lang.RuntimeException: Ruins mod crashed because it was denied file write access to C:\Users\lukaswil\Documents\Curse\Minecraft\Instances\Madpack 4\saves\New World\DIM-9999\BattletowerPositionsFile.txt
+	at atomicstryker.battletowers.common.WorldGenHandler.flushCurrentPosListToFile(WorldGenHandler.java:379)
+	at atomicstryker.battletowers.common.WorldGenHandler.eventWorldSave(WorldGenHandler.java:63)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler_1309_WorldGenHandler_eventWorldSave_Save.invoke(.dynamic)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:90)
+	at net.minecraftforge.fml.common.eventhandler.EventBus.post(EventBus.java:182)
+	at net.minecraft.world.WorldServer.func_73044_a(WorldServer.java:1008)
+	at net.minecraft.server.MinecraftServer.func_71267_a(MinecraftServer.java:408)
+	at net.minecraft.server.integrated.IntegratedServer.func_71267_a(IntegratedServer.java:252)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:691)
+	at net.minecraft.server.integrated.IntegratedServer.func_71217_p(IntegratedServer.java:185)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 1649257880 bytes (1572 MB) / 3272081408 bytes (3120 MB) up to 5488246784 bytes (5234 MB)
+	JVM Flags: 4 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx5888m -Xms256m -XX:PermSize=256m
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	FML: MCP 9.42 Powered by Forge 14.23.5.2768 119 mods loaded, 119 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State     | ID                   | Version                  | Source                                             | Signature                                |
+	|:--------- |:-------------------- |:------------------------ |:-------------------------------------------------- |:---------------------------------------- |
+	| UCHIJAAAA | minecraft            | 1.12.2                   | minecraft.jar                                      | None                                     |
+	| UCHIJAAAA | mcp                  | 9.42                     | minecraft.jar                                      | None                                     |
+	| UCHIJAAAA | FML                  | 8.0.99.99                | forge-1.12.2-14.23.5.2768.jar                      | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| UCHIJAAAA | forge                | 14.23.5.2768             | forge-1.12.2-14.23.5.2768.jar                      | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| UCHIJAAAA | openmodscore         | 0.12.1                   | minecraft.jar                                      | None                                     |
+	| UCHIJAAAA | foamfixcore          | 7.7.4                    | minecraft.jar                                      | None                                     |
+	| UCHIJAAAA | actuallyadditions    | 1.12.2-r144              | ActuallyAdditions-1.12.2-r144.jar                  | None                                     |
+	| UCHIJAAAA | redstoneflux         | 2.1.0                    | RedstoneFlux-1.12-2.1.0.6-universal.jar            | 8a6abf2cb9e141b866580d369ba6548732eff25f |
+	| UCHIJAAAA | cofhcore             | 4.6.1                    | CoFHCore-1.12.2-4.6.1.22-universal.jar             | None                                     |
+	| UCHIJAAAA | craftstudioapi       | 1.0.0                    | CraftStudio-1.0.0.93-mc1.12-alpha.jar              | None                                     |
+	| UCHIJAAAA | mantle               | 1.12-1.3.3.39            | Mantle-1.12-1.3.3.39.jar                           | None                                     |
+	| UCHIJAAAA | natura               | 1.12.2-4.3.2.65          | natura-1.12.2-4.3.2.65.jar                         | None                                     |
+	| UCHIJAAAA | ctm                  | MC1.12.2-0.3.2.18        | CTM-MC1.12.2-0.3.2.18.jar                          | None                                     |
+	| UCHIJAAAA | twilightforest       | 3.8.689                  | twilightforest-1.12.2-3.8.689-universal.jar        | None                                     |
+	| UCHIJAAAA | animania             | 1.6.2                    | animania-1.12.2-1.6.2.jar                          | None                                     |
+	| UCHIJAAAA | applecore            | 3.1.4                    | AppleCore-mc1.12.2-3.1.4.jar                       | None                                     |
+	| UCHIJAAAA | jei                  | 4.13.1.225               | jei_1.12.2-4.13.1.225.jar                          | None                                     |
+	| UCHIJAAAA | appleskin            | 1.0.9                    | AppleSkin-mc1.12-1.0.9.jar                         | None                                     |
+	| UCHIJAAAA | quark                | r1.5-135                 | Quark-r1.5-135.jar                                 | None                                     |
+	| UCHIJAAAA | autoreglib           | 1.3-21                   | AutoRegLib-1.3-21.jar                              | None                                     |
+	| UCHIJAAAA | battletowers         | 1.6.4                    | BattleTowers-1.12.2.jar                            | None                                     |
+	| UCHIJAAAA | betterbuilderswands  | 0.12.0                   | BetterBuildersWands-1.12-0.12.0.251+d6c4d93.jar    | None                                     |
+	| UCHIJAAAA | betterquesting       | 3.5.279                  | BetterQuesting-3.5.279.jar                         | None                                     |
+	| UCHIJAAAA | codechickenlib       | 3.2.2.353                | CodeChickenLib-1.12.2-3.2.2.353-universal.jar      | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| UCHIJAAAA | brandonscore         | 2.4.8                    | BrandonsCore-1.12.2-2.4.8.194-universal.jar        | None                                     |
+	| UCHIJAAAA | silentlib            | 3.0.9                    | SilentLib-1.12.2-3.0.9-159.jar                     | None                                     |
+	| UCHIJAAAA | scalinghealth        | 1.3.31                   | ScalingHealth-1.12.2-1.3.31-132.jar                | None                                     |
+	| UCHIJAAAA | cedchallengemode     | 0.8.1                    | CedChallengeMode-1.12.2-0.8.1.jar                  | None                                     |
+	| UCHIJAAAA | cedendcake           | 0.3                      | CedEndCake-1.12.2-0.3.jar                          | None                                     |
+	| UCHIJAAAA | projecte             | 1.12-PE1.3.2h            | ProjectE-1.12-PE1.3.2h.jar                         | None                                     |
+	| UCHIJAAAA | chisel               | MC1.12.2-0.2.1.35        | Chisel-MC1.12.2-0.2.1.35.jar                       | None                                     |
+	| UCHIJAAAA | tinkersextras        | 1.12.2-1.0.5             | TinkersExtras-1.12.2-1.0.5.jar                     | None                                     |
+	| UCHIJAAAA | tconstruct           | 1.12.2-2.11.0.106        | TConstruct-1.12.2-2.11.0.106.jar                   | None                                     |
+	| UCHIJAAAA | cedkappa             | 1.3.8                    | CedKappa-1.12.2-1.3.8.jar                          | None                                     |
+	| UCHIJAAAA | bq_standard          | 3.4.145                  | StandardExpansion-3.4.145.jar                      | None                                     |
+	| UCHIJAAAA | cedquesttracker      | 0.12.1                   | CedQuestTracker-1.12.2-0.12.1.jar                  | None                                     |
+	| UCHIJAAAA | cedtreasurehunting   | 0.3.6                    | CedTreasureHunting-1.12.2-0.3.6.jar                | None                                     |
+	| UCHIJAAAA | nei                  | 2.4.2                    | NotEnoughItems-1.12.2-2.4.2.240-universal.jar      | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| UCHIJAAAA | rafradek_tf2_weapons | 1.4.1b                   | rafradek_tf2_weapons-1.12.2-1.4.1b.jar             | None                                     |
+	| UCHIJAAAA | refinedstorage       | 1.6.12                   | refinedstorage-1.6.12.jar                          | 57893d5b90a7336e8c63fe1c1e1ce472c3d59578 |
+	| UCHIJAAAA | cedunleashedcontrol  | 1.1.10                   | CedUnleashedControl-1.12.2-1.1.10.jar              | None                                     |
+	| UCHIJAAAA | cedunleashedlife     | 1.4.6                    | CedUnleashedLife-1.12.2-1.4.6.jar                  | None                                     |
+	| UCHIJAAAA | chickenchunks        | 2.4.1.73                 | ChickenChunks-1.12.2-2.4.1.73-universal.jar        | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| UCHIJAAAA | cofhworld            | 1.3.0                    | CoFHWorld-1.12.2-1.3.0.6-universal.jar             | 8a6abf2cb9e141b866580d369ba6548732eff25f |
+	| UCHIJAAAA | crafttweaker         | 4.1.13                   | CraftTweaker2-1.12-4.1.13.jar                      | None                                     |
+	| UCHIJAAAA | ctgui                | 1.0.0                    | CraftTweaker2-1.12-4.1.13.jar                      | None                                     |
+	| UCHIJAAAA | crafttweakerjei      | 2.0.2                    | CraftTweaker2-1.12-4.1.13.jar                      | None                                     |
+	| UCHIJAAAA | cucumber             | 1.1.3                    | Cucumber-1.12.2-1.1.3.jar                          | None                                     |
+	| UCHIJAAAA | custommainmenu       | 2.0.9                    | CustomMainMenu-MC1.12.2-2.0.9.jar                  | None                                     |
+	| UCHIJAAAA | cyclicmagic          | 1.17.10                  | Cyclic-1.12.2-1.17.10.jar                          | 1bc8f8dbe770187a854cef35dad0ff40ba441bbe |
+	| UCHIJAAAA | thermalfoundation    | 2.6.1                    | ThermalFoundation-1.12.2-2.6.1.22-universal.jar    | 8a6abf2cb9e141b866580d369ba6548732eff25f |
+	| UCHIJAAAA | draconicevolution    | 2.3.17                   | Draconic-Evolution-1.12.2-2.3.17.321-universal.jar | None                                     |
+	| UCHIJAAAA | enderstorage         | 2.4.5.135                | EnderStorage-1.12.2-2.4.5.135-universal.jar        | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| UCHIJAAAA | enderzoo             | 1.12.1-1.4.0.49          | EnderZoo-1.12.1-1.4.0.49.jar                       | None                                     |
+	| UCHIJAAAA | eqs                  | 1.0.2                    | EquivalentStorage-1.0.2.jar                        | None                                     |
+	| UCHIJAAAA | mekanism             | 1.12.2-9.4.13.349        | Mekanism-1.12.2-9.4.13.349.jar                     | None                                     |
+	| UCHIJAAAA | thermalexpansion     | 5.5.2                    | ThermalExpansion-1.12.2-5.5.2.39-universal.jar     | 8a6abf2cb9e141b866580d369ba6548732eff25f |
+	| UCHIJAAAA | exchangers           | 1.12.2-2.8               | Exchangers-1.12.2-2.8.jar                          | 4ffa87db52cf086d00ecc4853a929367b1c39b5c |
+	| UCHIJAAAA | extrautils2          | 1.0                      | extrautils2-1.12-1.9.8.jar                         | None                                     |
+	| UCHIJAAAA | zerocore             | 1.12-0.1.2.2             | zerocore-1.12-0.1.2.2.jar                          | None                                     |
+	| UCHIJAAAA | bigreactors          | 1.12.2-0.4.5.49          | ExtremeReactors-1.12.2-0.4.5.49.jar                | None                                     |
+	| UCHIJAAAA | foamfix              | 0.10.3-1.12.2            | foamfix-0.10.3-1.12.2.jar                          | None                                     |
+	| UCHIJAAAA | forgelin             | 1.8.2                    | Forgelin-1.8.2.jar                                 | None                                     |
+	| UCHIJAAAA | hardcorecheater      | 1.0                      | hardcorecheater-1.10-1.0.2.jar                     | None                                     |
+	| UCHIJAAAA | harvestables         | 1.2                      | harvestables-1.2.1.jar                             | None                                     |
+	| UCHIJAAAA | healthhungertweaks   | 2.1.2                    | healthhungertweaks-1.12-2.1.2.jar                  | None                                     |
+	| UCHIJAAAA | waila                | 1.8.26                   | Hwyla-1.8.26-B41_1.12.2.jar                        | None                                     |
+	| UCHIJAAAA | infernalmobs         | 1.7.5                    | InfernalMobs-1.12.2.jar                            | None                                     |
+	| UCHIJAAAA | inventorytweaks      | 1.63+release.109.220f184 | InventoryTweaks-1.63.jar                           | 55d2cd4f5f0961410bf7b91ef6c6bf00a766dcbe |
+	| UCHIJAAAA | ironchest            | 1.12.2-7.0.54.838        | ironchest-1.12.2-7.0.54.838.jar                    | None                                     |
+	| UCHIJAAAA | kc                   | 1.12                     | knobcontrol-1.12-4.0.20.jar                        | None                                     |
+	| UCHIJAAAA | loottweaker          | 0.0.8                    | LootTweaker-1.12.2-0.0.8.jar                       | None                                     |
+	| UCHIJAAAA | lycanitesmobs        | 1.20.5.0 - MC 1.12.2     | LycanitesMobsComplete 1.20.5.0 [1.12.2].jar        | None                                     |
+	| UCHIJAAAA | arcticmobs           | 1.20.5.0 - MC 1.12.2     | LycanitesMobsComplete 1.20.5.0 [1.12.2].jar        | None                                     |
+	| UCHIJAAAA | demonmobs            | 1.20.5.0 - MC 1.12.2     | LycanitesMobsComplete 1.20.5.0 [1.12.2].jar        | None                                     |
+	| UCHIJAAAA | desertmobs           | 1.20.5.0 - MC 1.12.2     | LycanitesMobsComplete 1.20.5.0 [1.12.2].jar        | None                                     |
+	| UCHIJAAAA | elementalmobs        | 1.20.5.0 - MC 1.12.2     | LycanitesMobsComplete 1.20.5.0 [1.12.2].jar        | None                                     |
+	| UCHIJAAAA | forestmobs           | 1.20.5.0 - MC 1.12.2     | LycanitesMobsComplete 1.20.5.0 [1.12.2].jar        | None                                     |
+	| UCHIJAAAA | freshwatermobs       | 1.20.5.0 - MC 1.12.2     | LycanitesMobsComplete 1.20.5.0 [1.12.2].jar        | None                                     |
+	| UCHIJAAAA | infernomobs          | 1.20.5.0 - MC 1.12.2     | LycanitesMobsComplete 1.20.5.0 [1.12.2].jar        | None                                     |
+	| UCHIJAAAA | junglemobs           | 1.20.5.0 - MC 1.12.2     | LycanitesMobsComplete 1.20.5.0 [1.12.2].jar        | None                                     |
+	| UCHIJAAAA | mountainmobs         | 1.20.5.0 - MC 1.12.2     | LycanitesMobsComplete 1.20.5.0 [1.12.2].jar        | None                                     |
+	| UCHIJAAAA | plainsmobs           | 1.20.5.0 - MC 1.12.2     | LycanitesMobsComplete 1.20.5.0 [1.12.2].jar        | None                                     |
+	| UCHIJAAAA | saltwatermobs        | 1.20.5.0 - MC 1.12.2     | LycanitesMobsComplete 1.20.5.0 [1.12.2].jar        | None                                     |
+	| UCHIJAAAA | shadowmobs           | 1.20.5.0 - MC 1.12.2     | LycanitesMobsComplete 1.20.5.0 [1.12.2].jar        | None                                     |
+	| UCHIJAAAA | swampmobs            | 1.20.5.0 - MC 1.12.2     | LycanitesMobsComplete 1.20.5.0 [1.12.2].jar        | None                                     |
+	| UCHIJAAAA | mad_villagers        | %VERSION%                | Mad Villagers-1.12.2-1.0.1-release.jar             | None                                     |
+	| UCHIJAAAA | mapwriter            | 2.8.2                    | MapWriter-1.12.2-2.8.2.jar                         | None                                     |
+	| UCHIJAAAA | mcjtylib_ng          | 3.0.7                    | mcjtylib-1.12-3.0.7.jar                            | None                                     |
+	| UCHIJAAAA | mekanismgenerators   | 9.4.11                   | MekanismGenerators-1.12.2-9.4.13.349.jar           | None                                     |
+	| UCHIJAAAA | mekanismtools        | 9.4.11                   | MekanismTools-1.12.2-9.4.13.349.jar                | None                                     |
+	| UCHIJAAAA | mikedongles          | 0.6.0                    | MikeDongles-0.6.0-[1.12.2].jar                     | None                                     |
+	| UCHIJAAAA | moredefaultoptions   | 1.12-0.0.2               | moredefaultoptions-1.12-0.0.2.jar                  | None                                     |
+	| UCHIJAAAA | mputils              | 1.5.6                    | MPUtils-1.12.2-1.5.6.jar                           | None                                     |
+	| UCHIJAAAA | mpbasic              | 1.4.7                    | mpbasic-1.12.2-1.4.10.jar                          | None                                     |
+	| UCHIJAAAA | mysticalagriculture  | 1.7.0                    | MysticalAgriculture-1.12.2-1.7.0.jar               | None                                     |
+	| UCHIJAAAA | naturescompass       | 1.5.1                    | NaturesCompass-1.12.2-1.5.1.jar                    | None                                     |
+	| UCHIJAAAA | neat                 | 1.4-17                   | Neat 1.4-17.jar                                    | None                                     |
+	| UCHIJAAAA | openmods             | 0.12.1                   | OpenModsLib-1.12.2-0.12.1.jar                      | d2a9a8e8440196e26a268d1f3ddc01b2e9c572a5 |
+	| UCHIJAAAA | openblocks           | 1.8                      | OpenBlocks-1.12.2-1.8.jar                          | d2a9a8e8440196e26a268d1f3ddc01b2e9c572a5 |
+	| UCHIJAAAA | oreexcavation        | 1.4.133                  | OreExcavation-1.4.133.jar                          | None                                     |
+	| UCHIJAAAA | guilib               | $version                 | paintingselgui-PSG Revamed-1.12.2-1.1.0.1.jar      | None                                     |
+	| UCHIJAAAA | paintingselgui       | $version                 | paintingselgui-PSG Revamed-1.12.2-1.1.0.1.jar      | None                                     |
+	| UCHIJAAAA | partyparrots         | 1.0.0                    | PartyParrots-1.12.1-1.0.0.jar                      | None                                     |
+	| UCHIJAAAA | plustic              | 6.5.4.2                  | plustic-6.5.4.2.jar                                | None                                     |
+	| UCHIJAAAA | rd                   | 1.12.2                   | Rain Delay-1.12.2-0.0.1.jar                        | None                                     |
+	| UCHIJAAAA | xreliquary           | 1.12.2-1.3.4.780         | Reliquary-1.12.2-1.3.4.780.jar                     | None                                     |
+	| UCHIJAAAA | resourceloader       | 1.5.3                    | ResourceLoader-MC1.12.1-1.5.3.jar                  | d72e0dd57935b3e9476212aea0c0df352dd76291 |
+	| UCHIJAAAA | rftools              | 7.59                     | rftools-1.12-7.59.jar                              | None                                     |
+	| UCHIJAAAA | roguelike            | 1.8.0                    | RoguelikeDungeons-1.12.2-1.8.0.jar                 | None                                     |
+	| UCHIJAAAA | ruins                | 17.1                     | Ruins-1.12.2.jar                                   | None                                     |
+	| UCHIJAAAA | stupidthings         | 1.1.5                    | Stupid Things-1.12.X-1.1.5.jar                     | None                                     |
+	| UCHIJAAAA | thermaldynamics      | 2.5.3                    | ThermalDynamics-1.12.2-2.5.3.16-universal.jar      | 8a6abf2cb9e141b866580d369ba6548732eff25f |
+	| UCHIJAAAA | tinkertoolleveling   | 1.12.2-1.1.0.DEV.b23e769 | TinkerToolLeveling-1.12.2-1.1.0.jar                | None                                     |
+	| UCHIJAAAA | tp                   | 3.2.31                   | tinyprogressions-1.12.2-3.3.31-Release.jar         | None                                     |
+	| UCHIJAAAA | toxicrain            | 1.0.1                    | ToxicRain-1.12-1.0.1.jar                           | None                                     |
+	| UCHIJAAAA | tor                  | 4.2.16                   | trolloresreborn-1.12.2-4.2.16.jar                  | None                                     |
+	| UCHIJAAAA | wailaharvestability  | 1.1.12                   | WailaHarvestability-mc1.12-1.1.12.jar              | None                                     |
+	| UCHIJAAAA | hungeroverhaul       | 1.12.2-1.3.3.jenkins148  | HungerOverhaul-1.12.2-1.3.3.jenkins148.jar         | None                                     |
+
+	Loaded coremods (and transformers): 
+Inventory Tweaks Coremod (InventoryTweaks-1.63.jar)
+  invtweaks.forge.asm.ContainerTransformer
+LoadingPlugin (Quark-r1.5-135.jar)
+  vazkii.quark.base.asm.ClassTransformer
+CTMCorePlugin (CTM-MC1.12.2-0.3.2.18.jar)
+  team.chisel.ctm.client.asm.CTMTransformer
+CedUnleashedControlPlugin (CedUnleashedControl-1.12.2-1.1.10.jar)
+  cedkilleur.cedunleashedcontrol.asm.CedUnleashedControlClassTransformer
+Do not report to Forge! (If you haven't disabled the FoamFix coremod, try disabling it in the config! Note that this bit of text will still appear.) (foamfix-0.10.3-1.12.2.jar)
+  pl.asie.foamfix.coremod.FoamFixTransformer
+LoadingPlugin (ResourceLoader-MC1.12.1-1.5.3.jar)
+  lumien.resourceloader.asm.ClassTransformer
+AppleCore (AppleCore-mc1.12.2-3.1.4.jar)
+  squeek.applecore.asm.TransformerModuleHandler
+CedChallengeCore (CedChallengeMode-1.12.2-0.8.1.jar)
+  cedkilleur.cedchallengemode.asm.CedClassTransformer
+ForgelinPlugin (Forgelin-1.8.2.jar)
+  
+OpenModsCorePlugin (OpenModsLib-1.12.2-0.12.1.jar)
+  openmods.core.OpenModsClassTransformer
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	OpenModsLib class transformers: [llama_null_fix:FINISHED],[horse_base_null_fix:FINISHED],[pre_world_render_hook:FINISHED],[player_render_hook:FINISHED],[horse_null_fix:FINISHED]
+	Pulsar/natura loaded Pulses: 
+		- NaturaCommons (Enabled/Forced)
+		- NaturaOverworld (Enabled/Not Forced)
+		- NaturaNether (Enabled/Not Forced)
+		- NaturaDecorative (Enabled/Not Forced)
+		- NaturaTools (Enabled/Not Forced)
+		- NaturaEntities (Enabled/Not Forced)
+		- NaturaOredict (Enabled/Forced)
+		- NaturaWorld (Enabled/Not Forced)
+
+	Pulsar/tconstruct loaded Pulses: 
+		- TinkerCommons (Enabled/Forced)
+		- TinkerWorld (Enabled/Not Forced)
+		- TinkerTools (Enabled/Not Forced)
+		- TinkerHarvestTools (Enabled/Forced)
+		- TinkerMeleeWeapons (Enabled/Forced)
+		- TinkerRangedWeapons (Enabled/Forced)
+		- TinkerModifiers (Enabled/Forced)
+		- TinkerSmeltery (Enabled/Not Forced)
+		- TinkerGadgets (Enabled/Not Forced)
+		- TinkerOredict (Enabled/Forced)
+		- TinkerIntegration (Enabled/Forced)
+		- TinkerFluids (Enabled/Forced)
+		- TinkerMaterials (Enabled/Forced)
+		- TinkerModelRegister (Enabled/Forced)
+		- chiselIntegration (Enabled/Not Forced)
+		- wailaIntegration (Enabled/Not Forced)
+
+	Profiler Position: N/A (disabled)
+	Player Count: 1 / 8; [EntityPlayerMP['lukaswil'/703, l='New World', x=-247.05, y=74.00, z=349.96]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
